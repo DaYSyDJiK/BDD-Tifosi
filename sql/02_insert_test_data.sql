@@ -165,3 +165,30 @@ INSERT INTO comprend (id_foccacia, id_ingredient, quantite) VALUES
 (8, 16, 20),
 (8, 14, 50);
 
+
+-- Liaison menu <-> boisson (table contient)
+-- Données de test : 1 soft + 1 eau par menu
+INSERT INTO contient (id_menu, id_boisson) VALUES
+(1, 1),  (1, 12),
+(2, 2),  (2, 12),
+(3, 3),  (3, 12),
+(4, 4),  (4, 12),
+(5, 6),  (5, 12),
+(6, 8),  (6, 12),
+(7, 10), (7, 12),
+(8, 11), (8, 12);
+
+
+
+-- Clients
+INSERT INTO client (id_client, nom, email) VALUES
+(1, 'Martin', 'martin@email.com'),
+(2, 'Julie', 'julie@email.com'),
+(3, 'Lucas', 'lucas@email.com');
+
+-- Achats
+INSERT INTO achat (id_achat, id_client, id_menu, date_achat) VALUES
+(1, 1, 1, NOW()),
+(2, 1, 3, NOW()),
+(3, 2, 2, NOW()),
+(4, 3, 5, NOW());
