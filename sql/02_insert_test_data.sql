@@ -5,7 +5,7 @@ DELETE FROM comprend;
 DELETE FROM menu;
 DELETE FROM boisson;
 DELETE FROM client;
-DELETE FROM foccacia;
+DELETE FROM focaccia;
 DELETE FROM ingredient;
 DELETE FROM marque;
 
@@ -66,7 +66,7 @@ insert into ingredient (id_ingredient, nom) values
 
 -- Foccacia
 
-INSERT INTO foccacia (id_foccacia, nom, prix) VALUES
+INSERT INTO focaccia (id_focaccia, nom, prix) VALUES
 (1, 'Mozaccia', 9.80),
 (2, 'Gorgonzollaccia', 10.80),
 (3, 'Raclaccia', 8.90),
@@ -78,7 +78,7 @@ INSERT INTO foccacia (id_foccacia, nom, prix) VALUES
 
 -- Menus
 
-INSERT INTO menu (id_menu, nom, prix, id_foccacia) VALUES
+INSERT INTO menu (id_menu, nom, prix, id_focaccia) VALUES
 (1, 'Menu Mozaccia', 13.90, 1),
 (2, 'Menu Gorgonzollaccia', 14.90, 2),
 (3, 'Menu Raclaccia', 12.90, 3),
@@ -91,9 +91,9 @@ INSERT INTO menu (id_menu, nom, prix, id_foccacia) VALUES
 
 
 -- Table de liaision
--- Comprend (foccacia <-> ingrédient)
+-- Comprend (focaccia <-> ingrédient)
 
-INSERT INTO comprend (id_foccacia, id_ingredient, quantite) VALUES
+INSERT INTO comprend (id_focaccia, id_ingredient, quantite) VALUES
 (1, 5, 200),
 (1, 25, 50),
 (1, 9, 20),
