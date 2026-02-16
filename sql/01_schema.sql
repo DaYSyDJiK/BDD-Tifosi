@@ -15,8 +15,8 @@ create table ingredient (
     unique (nom)
 ) engine = InnoDB;
 
-create table foccacia (
-    id_foccacia int auto_increment primary key,
+create table focaccia (
+    id_focaccia int auto_increment primary key,
     nom varchar(255) not null,
     prix decimal(6, 2) not null,
     unique (nom)
@@ -38,9 +38,9 @@ create table boisson (
 create table menu (
     id_menu int auto_increment primary key,
     nom varchar(255) not null,
-    id_foccacia int not null,
+    id_focaccia int not null,
     prix decimal(6, 2) not null,
-    foreign key (id_foccacia) references foccacia(id_foccacia)
+    foreign key (id_focaccia) references focaccia(id_focaccia)
 ) engine = InnoDB;
 
 create table client (
@@ -53,11 +53,11 @@ create table client (
 -- TABLES DE LIAISON
 -- Foccacia <-> Ingrédient (N-N) + Quantité
 create table comprend (
-    id_foccacia int not null,
+    id_focaccia int not null,
     id_ingredient int not null,
     quantite int not null default 1,
-    primary key (id_foccacia, id_ingredient),
-    foreign key (id_foccacia) references foccacia(id_foccacia),
+    primary key (id_focaccia, id_ingredient),
+    foreign key (id_focaccia) references focaccia(id_focaccia),
     foreign key (id_ingredient) references ingredient(id_ingredient)
 ) engine = InnoDB;
 
